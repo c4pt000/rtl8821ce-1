@@ -8,7 +8,7 @@ sudo make install
 sudo modprobe -a 8821ce
 ```
 
-##After every update thi should be run
+## After every update thi should be run
 ```
 cd rtl8821ce
 make clean
