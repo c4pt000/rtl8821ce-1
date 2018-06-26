@@ -1,21 +1,24 @@
-# Realtek RTL8821CE Driver
 
-## Intent
-This repository hosts the code for the [ArchLinux AUR Package](https://aur.archlinux.org/packages/rtl8821ce-dkms-git/). It's targetting Linux > 4.14 and is being developed for ArchLinux. No support will be provided for other Linux distributions or Linux Kernel versions outside of that range. 
-
-## DKMS
-This driver can be installed using [DKMS](http://linux.dell.com/dkms/). This is a system which will automatically recompile and install a kernel module when a new kernel gets installed or updated. To make use of DKMS, install the `dkms` package.
-
-
-## Installation of Driver
-In order to install the driver open a terminal in the directory with the source code and execute the following command:
+## Installation
 ```
-sudo ./dkms-install.sh
+git clone https://github.com/tomaspinho/rtl8821ce.git
+cd rtl8821ce/
+sudo make all
+sudo make install
+sudo modprobe -a 8821ce
 ```
 
-## Removal of Driver
-In order to remove the driver from your system open a terminal in the directory with the source code and execute the following command:
+##After every update thi should be run
 ```
-sudo ./dkms-remove.sh
+cd rtl8821ce
+make clean
+make
+sudo make install
+sudo modprobe 8821ce
 ```
 
+## Similar solution in Ubuntu forums but do not work for me
+https://ubuntuforums.org/showthread.php?t=2371149&page=3&p=13702710#post13702710
+
+## Link to stack owerflow solution
+https://askubuntu.com/questions/1021865/driver-for-realtek-rtl8821ce-lenovo-720s-13arr-ultrabook
